@@ -2,6 +2,10 @@ pipelines:
   test-pipeline:
     group: test-group
     locking: on
+    materials:
+      system_git:  # this is the name of material
+        git: git@github.com:nixxxon/test.git
+        shallow_clone: true
     stages:
       - test-stage:
           clean_workspace: true
