@@ -1,0 +1,20 @@
+pipelines:
+  test-pipeline:
+    group: test-group
+    locking: on
+    stages:
+      - test-stage:
+          clean_workspace: true
+          elastic_profile_id: "test"
+          jobs:
+            test-job:
+              tasks:
+                - exec:
+                    command: echo
+                    arguments:
+                      - "HELLO TEST"
+
+environments:
+  test-environment:
+    pipelines:
+      - test-pipeline
