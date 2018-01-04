@@ -12,6 +12,7 @@ pipelines:
           elastic_profile_id: "test"
           jobs:
             test-job:
+              elastic_profile_id: "test"
               tasks:
                 - exec:
                     command: echo
